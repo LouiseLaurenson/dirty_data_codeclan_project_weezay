@@ -8,7 +8,7 @@ output: html_notebook
 This data looks at different peoples opinions for candy that could be revived at Halloween across three years. 
 
 
-#**CLEANING PROCESS🧹**
+#**CLEANING PROCESS🧹** 
 
 I started the cleaning with one data frame at a time, lucky the 3 data frames had and some similar issues.
 
@@ -24,6 +24,8 @@ I also then also filter out any one under the age 2 and over 120.
 
 * **Pivot:** To make the data more readable I used a pivot_longer so the data would be easier to do analysis on. Making 'candy'
 and 'rating' columns. 
+
+<br>
 
 #**LET'S ANALYSE🔎** 
 
@@ -41,7 +43,7 @@ candy_all_data <- read_csv(here("clean_data/candy_all_data.csv"))
 #**AGE**
 
 
-**What is the total number of candy ratings given across the three years. (Number of candy ratings, not the number of raters. Don’t count missing values)**
+**What is the total number of candy ratings given across the three years. (Number of candy ratings, not the number of raters. Don’t count missing values)** 
 
 ```{r}
 candy_all_data %>% 
@@ -50,6 +52,7 @@ candy_all_data %>%
 ```
 Answer: 576925
 
+<br>
 
 
 **What was the average age of people who are going out trick or treating?**
@@ -63,6 +66,7 @@ candy_all_data %>%
 
 Answer: rounded 39
 
+<br>
 
 **What was the average age of people who are not going trick or treating?**
 
@@ -76,6 +80,7 @@ candy_all_data %>%
 ```
 Answer: rounded 39
 
+<br>
 
 #**MOST RATINGS**
 
@@ -95,6 +100,7 @@ candy_all_data %>%
 ```
 For joy: any_full_sized_candy_bar comes out top with reese_s_peanut_butter_cup in close second. 
 
+<br>
 
 *'FOR MEH:'*
 ```{r}
@@ -108,6 +114,8 @@ candy_all_data %>%
 
 ```
 For Meh: lollipops got the most ratings 
+
+<br>
 
 *'FOR DESPAIR:'*
 
@@ -123,6 +131,8 @@ candy_all_data %>%
 ```
 For Despair: gum form baseball cards came out on top 
 
+<br>
+
 #**STARBURST**
 
 **How many people rated Starburst as despair?**
@@ -135,6 +145,8 @@ candy_all_data %>%
 ```
 
 ANSWER: 1866
+
+<br>
 
 #**RANKING SYSTEM**
 
@@ -155,6 +167,8 @@ rating_candy_data <- candy_all_data %>%
 
 **What was the most popular candy bar by this rating system for each gender in the dataset ?**
 
+<br>
+
 *'Starting with male:'*
 ```{r}
 rating_candy_data %>%
@@ -168,6 +182,8 @@ rating_candy_data %>%
 ```
 The answer give the top answer being any_full_sized_candy_bar but as this a very vague answer I would say that reese_s_peanut_butter_cups get top place.
 
+<br>
+
 *'Now female:"* 
 
 ```{r}
@@ -180,6 +196,8 @@ rating_candy_data %>%
   head(5)
 ```
 same as the male excluding any_full_sized_candy_bar the top is reese_s_peanut_butter_cups
+
+<br>
 
 *'others:'*
 
@@ -197,6 +215,8 @@ Like the men and women the top answer is full_sized_candy_bar but excluding this
 
 #**YEAR**
 
+<br>
+
 **What was the most popular candy bar in each year?**
 
 *'2015'*
@@ -212,6 +232,8 @@ rating_candy_data %>%
 ```
 Answer: any_full_sized_candy_bar with reeses second 
 
+<br>
+
 *'2016'*
 ```{r}
 rating_candy_data %>%
@@ -223,6 +245,8 @@ rating_candy_data %>%
   head(5)
 ```
 Answer: any_full_sized_candy_bar with kit_kat second 
+
+<br>
 
 *'2017'*
 
@@ -237,6 +261,7 @@ rating_candy_data %>%
 ```
 Answer: any_full_sized_candy_bar with reeses second 
 
+<br>
 
 #**COUNTRY**
 
@@ -300,3 +325,5 @@ rating_candy_data %>%
 
 ```
 Answer: any_full_sized_candy_bar with tolberone second.
+
+<br>
