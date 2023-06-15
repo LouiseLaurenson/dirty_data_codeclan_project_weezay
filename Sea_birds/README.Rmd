@@ -1,0 +1,20 @@
+---
+title: "READ ME"
+output: html_document
+date: "2023-06-15"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# SEA BIRDS 🐧
+
+This dataset looks at the sightings of different sea birds, it also includes the ships that had each sighting.
+
+
+## Contributing
+
+Pull requests are welcome. 
+
+
