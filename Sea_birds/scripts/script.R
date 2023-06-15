@@ -76,13 +76,10 @@ ship_data <- ship_data %>%
 #join on record ID
 ship_and_bird <- full_join(bird_data, ship_data, by = "record_id")
 
-ship_and_bird %>% 
-  summarise(across(.fns = ~ sum(is.na(.x))))
-
 #remove anything with na in count 
 ship_and_bird <- ship_and_bird %>% 
   filter(!is.na(count)) 
 
 
 
-write_csv(ship_and_bird, "raw_data/ship_and_bird_clean.csv")
+write_csv(ship_and_bird, "clean_data//ship_and_bird_clean.csv")

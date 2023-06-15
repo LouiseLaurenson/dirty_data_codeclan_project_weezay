@@ -29,10 +29,11 @@ Bird_data -
 ```{r}
 library(tidyverse)
 library(here)
+
 ```
 
 ```{r}
-ship_and_bird_clean <- read_csv(here("raw_data/ship_and_bird_clean.csv"))
+ship_and_bird_clean <- read_csv(here("clean_data/ship_and_bird_clean.csv"))
 ```
 
 **SIGHTINGS**
