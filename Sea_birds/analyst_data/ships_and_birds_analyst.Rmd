@@ -1,0 +1,108 @@
+---
+title: "TASK:3 SEA BIRDS 🐧 "
+output: html_notebook
+---
+
+#**INTRO** 
+
+This dataset looks at the sightings of different sea birds, it also includes the ships that had each sighting.
+
+
+#**CLEANING PROCESS🧹**
+
+For the cleaning proseece I done a couple of things:
+
+Ship_data - 
+* This data frame started off with a lot of irrelevant info for the questions we had, these meant I simplified it down to just information I needed.
+
+Bird_data - 
+* **Columns:** The Raw data also had a lot information that was not required for our analysis
+             
+* **Removing from string:** The names of the birds had a lot of stuff in the column that I removed. *'e.g Diomedea impavida / melanophrys AD '* with the AD being removed with following pattern "AD|JUV|IMM|SUBAD|PL[0-9]+"
+
+* **Removing no count:** I also removed any data that didn’t t have a count as to me this was a wasted entry in the data
+
+
+#**LET'S ANALYSE🔎** 
+
+
+```{r}
+library(tidyverse)
+library(here)
+```
+
+```{r}
+ship_and_bird_clean <- read_csv(here("raw_data/ship_and_bird_clean.csv"))
+```
+
+**SIGHTINGS**
+
+**Which bird had the most individual sightings?**
+
+```{r}
+ship_and_bird_clean %>% 
+  select(species_scientific, species, species_abbreviation, count) %>% 
+  filter(count == 1) %>% 
+  group_by(species, species_scientific, species_abbreviation) %>% 
+  summarise(sightings = sum(count, na.rm = TRUE), .groups = "drop") %>% 
+  arrange(desc(sightings)) %>% 
+  head(1)
+```
+Answer: Wandering albatross sensu lato with 1707 
+
+**HIGHEST COUNT**
+
+**Which bird had the highest total count?**
+
+```{r}
+ship_and_bird_clean %>% 
+  select(species_scientific, species, species_abbreviation, count) %>% 
+  group_by(species, species_scientific, species_abbreviation) %>% 
+  summarise(sightings = sum(count, na.rm = TRUE), .groups = "drop") %>% 
+  arrange(desc(sightings)) %>% 
+  head(1)
+```
+Answer: Short tailed shearwater
+
+**LATITUDE**
+
+**Which bird had the highest total count above a latitude of -30?**
+
+```{r}
+ship_and_bird_clean %>% 
+  filter(lat > -30) %>% 
+  group_by(species, species_scientific, species_abbreviation) %>% 
+  summarise(sightings = sum(count, na.rm = TRUE), .groups = "drop") %>% 
+  arrange(desc(sightings)) %>% 
+  head(1)
+  
+```
+Answer: Wedge tailed shearwater
+
+**LONLEY BIRDS**
+
+**How many different types of birds were only ever seen in groups of 1?**
+
+```{r}
+
+ship_and_bird_clean %>% 
+  group_by(species, species_scientific, species_abbreviation) %>% 
+  summarise(mean_sightins = mean(count, na.rm = TRUE), .groups = "drop") %>% 
+  filter(mean_sightins == 1) %>% 
+  nrow()
+
+```
+Answer: 37
+
+**PENGUINS**
+
+**How many penguins were seen?**
+
+```{r}
+ship_and_bird_clean %>% 
+  mutate(is_penguin = str_detect(species, pattern = "penguin")) %>% 
+  filter(is_penguin == TRUE) %>% 
+  summarise(sum(count, na.rm = TRUE)) 
+
+```
+Answer: 154
