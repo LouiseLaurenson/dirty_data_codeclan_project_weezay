@@ -10,7 +10,7 @@ This data looks at different peoples opinions for candy that could be revived at
 
 #**CLEANING PROCESS🧹**
 
-I started the cleaning with one data frame at a time, lucky though the 3 data frames and some similar issues.
+I started the cleaning with one data frame at a time, lucky the 3 data frames had and some similar issues.
 
 * **Column names:** The Raw data had alot of isues with columns which had nothing to do with candy, this meant that having to filter out any columns that I found irrelevant to the task. *'e.g "Which day do you prefer, Friday or Sunday?"'* 
 I also had to standardize alot of columns over the three data frames. *'e.g your_gender = gender'*
