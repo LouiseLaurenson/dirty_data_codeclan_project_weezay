@@ -83,3 +83,4 @@ ship_and_bird <- ship_and_bird %>%
 
 
 write_csv(ship_and_bird, "clean_data//ship_and_bird_clean.csv")
+

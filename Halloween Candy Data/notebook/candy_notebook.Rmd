@@ -59,6 +59,7 @@ Answer: 576925
 
 ```{r}
 candy_all_data %>% 
+  filter(going_trick_or_treating == "Yes") %>% 
   summarise(age = mean(age)) %>% 
   round()
 

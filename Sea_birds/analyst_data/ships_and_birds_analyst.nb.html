@@ -1779,6 +1779,12 @@ data</p></li>
 library(here)
 </code></pre>
 <!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiaGVyZSgpIHN0YXJ0cyBhdCAvVXNlcnMvbG91aXNlbGF1cm5zb24vRGVza3RvcC9Db2RlQ2xhbi9kaXJ0eV9kYXRhX3Byb2plY3Rfd2VlemF5L2RpcnR5X2RhdGFfY29kZWNsYW5fcHJvamVjdF93ZWV6YXkvU2VhX2JpcmRzXG4ifQ== -->
+<pre><code>here() starts at /Users/louiselaurnson/Desktop/CodeClan/dirty_data_project_weezay/dirty_data_codeclan_project_weezay/Sea_birds</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG5gYGAifQ== -->
+<pre class="r"><code></code></pre>
+<!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
@@ -1786,6 +1792,14 @@ library(here)
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc2hpcF9hbmRfYmlyZF9jbGVhbiA8LSByZWFkX2NzdihoZXJlKFwiY2xlYW5fZGF0YS9zaGlwX2FuZF9iaXJkX2NsZWFuLmNzdlwiKSlcbmBgYCJ9 -->
 <pre class="r"><code>ship_and_bird_clean &lt;- read_csv(here(&quot;clean_data/ship_and_bird_clean.csv&quot;))</code></pre>
 <!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiUm93czogNDYzMjAgQ29sdW1uczogOeKUgOKUgCBDb2x1bW4gc3BlY2lmaWNhdGlvbiDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIBcbkRlbGltaXRlcjogXCIsXCJcbmNociAoMyk6IHNwZWNpZXNfc2NpZW50aWZpYywgc3BlY2llcywgc3BlY2llc19hYmJyZXZpYXRpb25cbmRibCAoNik6IGJpcmRfcmVjb3JkLCByZWNvcmRfaWQsIGNvdW50LCByZWNvcmQsIGxhdCwgbG9uZ1xu4oS5IFVzZSBgc3BlYygpYCB0byByZXRyaWV2ZSB0aGUgZnVsbCBjb2x1bW4gc3BlY2lmaWNhdGlvbiBmb3IgdGhpcyBkYXRhLlxu4oS5IFNwZWNpZnkgdGhlIGNvbHVtbiB0eXBlcyBvciBzZXQgYHNob3dfY29sX3R5cGVzID0gRkFMU0VgIHRvIHF1aWV0IHRoaXMgbWVzc2FnZS5cbiJ9 -->
+<pre><code>Rows: 46320 Columns: 9── Column specification ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Delimiter: &quot;,&quot;
+chr (3): species_scientific, species, species_abbreviation
+dbl (6): bird_record, record_id, count, record, lat, long
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <p><strong>SIGHTINGS</strong></p>
@@ -1864,17 +1878,15 @@ library(here)
 groups of 1?</strong></p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG5zaGlwX2FuZF9iaXJkX2NsZWFuICU+JSBcbiAgZ3JvdXBfYnkoc3BlY2llcywgc3BlY2llc19zY2llbnRpZmljLCBzcGVjaWVzX2FiYnJldmlhdGlvbikgJT4lIFxuICBzdW1tYXJpc2UobWVhbl9zaWdodGlucyA9IG1lYW4oY291bnQsIG5hLnJtID0gVFJVRSksIC5ncm91cHMgPSBcImRyb3BcIikgJT4lIFxuICBmaWx0ZXIobWVhbl9zaWdodGlucyA9PSAxKSAlPiUgXG4gIG5yb3coKVxuYGBgIn0= -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG5zaGlwX2FuZF9iaXJkX2NsZWFuICU+JSBcbiAgZ3JvdXBfYnkoc3BlY2llcywgc3BlY2llc19zY2llbnRpZmljLCBzcGVjaWVzX2FiYnJldmlhdGlvbikgJT4lIFxuICBzdW1tYXJpc2UobWVhbl9zaWdodGlucyA9IG1lYW4oY291bnQsIG5hLnJtID0gVFJVRSksIC5ncm91cHMgPSBcImRyb3BcIikgJT4lIFxuICBmaWx0ZXIobWVhbl9zaWdodGlucyA9PSAxKSAlPiUgXG4gIG5yb3coKVxuXG5gYGAifQ== -->
 <pre class="r"><code>
 ship_and_bird_clean %&gt;% 
   group_by(species, species_scientific, species_abbreviation) %&gt;% 
   summarise(mean_sightins = mean(count, na.rm = TRUE), .groups = &quot;drop&quot;) %&gt;% 
   filter(mean_sightins == 1) %&gt;% 
-  nrow()</code></pre>
+  nrow()
+</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDM3XG4ifQ== -->
-<pre><code>[1] 37</code></pre>
-<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <p>Answer: 37</p>
