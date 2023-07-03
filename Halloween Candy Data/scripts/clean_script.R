@@ -129,7 +129,7 @@ candy_2016_clean_country <- candy_2016_clean_gender %>%
                                   pattern = "!"))
 
 
-#grouping counrtys
+#grouping countrys
 uk_pattern <- "UK|ENGLAND|UNITED K+|U.K|SCOTLAND|IRELAND"
 usa_ <-"USA|UNITED S+|U\\.*S|MURICA|USSA|AMERICA|THE YOO ESS OF AAAYYYYYY|MERICA|NORTH CAROLINA|'MERICA|PITTSBURGH|NEW YORK|NEW JERSEY|MURRIKA|ALASKA"
 canada_pattern <- "CANADA"
@@ -174,7 +174,7 @@ candy_2017_clean <- candy_2017 %>%
 
 candy_2017_clean <- candy_2017_clean %>%
   rename_with(.cols = everything(), .fn = ~ str_remove((.x), pattern = "q[0-9]_"))
-#making standernames
+#making standeßrnames
 
 candy_2017_clean <- candy_2017_clean %>%
   rename(going_trick_or_treating = going_out)
